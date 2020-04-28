@@ -2,7 +2,9 @@
 
 namespace BinaryTorch\Blogged\Traits;
 
-use ParsedownExtra;
+//use ParsedownExtra;
+
+use Michelf\MarkdownExtra;
 
 trait HasMarkdownParser
 {
@@ -13,6 +15,7 @@ trait HasMarkdownParser
 	 */
 	public function parse($text)
 	{
-		return (new ParsedownExtra)->text($text);
+//		return (new ParsedownExtra)->text($text);
+		return MarkdownExtra::defaultTransform($text);
 	}
 }
