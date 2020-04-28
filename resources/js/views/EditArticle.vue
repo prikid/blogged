@@ -154,10 +154,7 @@
                 return this.form.image ? this.form.image.url ? this.form.image.url : this.form.image : '/vendor/binarytorch/blogged/assets/new.svg';
             },
             articleImageAlt() {
-                const alt = this.articleImage.split('/').pop()
-                    .split('.')[0]
-                    .replace(/[-_]/,' ');
-
+                const alt = this.form.slug.replace(/[-_]/,' ');
                 return alt.charAt(0).toUpperCase() + alt.slice(1);
             }
         },
