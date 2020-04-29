@@ -19,7 +19,7 @@ class BlogController extends Controller
             $category = Category::whereSlug($category)->firstOrFail();
 
             $articles = $category->articles()->published()->orderBy('publish_date', 'DESC')->with('category')->filter($filters)->paginate($pagination);
-            
+
             return view('blogged::blog.index', compact('articles'));
         }
 
@@ -28,19 +28,26 @@ class BlogController extends Controller
         return view('blogged::blog.index', compact('articles'));
     }
 
-    /**
-     * Show a given article.
-     */
-    public function show($category, Article $article)
+	/**
+	 * Show a given article.
+	 */
+    public function show($category, Article $article, $amp='')
     {
+        $viewName = 'blogged::blog.show';
+
+        if ($amp=='amp') {
+            $viewName .= '-amp';
+            abort_unless(view()->exists($viewName), 404);
+        }
+
         $category = Category::where('slug', $category)->firstOrFail();
 
         abort_if($category->id != $article->category_id, 404);
-        
+
         abort_if(! $article->published && $article->author->id != auth()->id(), 403);
 
         $article->load(['category', 'author']);
 
-        return view('blogged::blog.show', compact('article'));
+        return view($viewName, compact('article'));
     }
 }
