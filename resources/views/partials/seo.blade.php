@@ -1,6 +1,6 @@
 <meta name="description" content="{{ $description }}">
 <link rel="canonical" href="{{ $url }}"/>
-<meta name="twitter:card" value="summary">
+<meta name="twitter:card" content="summary">
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="{{ $title }}"/>
 <meta property="og:url" content="{{ $url }}"/>
