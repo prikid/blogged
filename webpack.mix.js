@@ -4,4 +4,4 @@ mix.options({processCssUrls: false})
 	.sass('resources/sass/app.scss', 'publishable/assets/css')
 	.js('resources/js/app.js', 'publishable/assets/js')
 	.sourceMaps(true, 'source-map')
-	.copy('publishable/assets', '../web/public/vendor/binarytorch/blogged/assets');
+	.copy('publishable/assets', '../prikidapp/public/vendor/binarytorch/blogged/assets');

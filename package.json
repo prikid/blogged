@@ -19,7 +19,7 @@
     "axios": "0.19.2",
     "bootstrap": "^4.3.1",
     "cropperjs": "^1.4.3",
-    "jquery": "^3.4",
+    "jquery": "~3.4.1",
     "laravel-mix": "^5.0.4",
     "markdown-it": "10.0.0",
     "marked": "1.0.0",
