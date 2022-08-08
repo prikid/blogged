@@ -31,7 +31,7 @@ class BlogController extends Controller
 	/**
 	 * Show a given article.
 	 */
-    public function show($category, Article $article, $amp='')
+    public function show(Article $article, $category, $amp='')
     {
         $viewName = 'blogged::blog.show';
 
